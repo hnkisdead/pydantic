@@ -2,9 +2,11 @@
 devtools==0.8.0
 
 python-dateutil
+pydantic
 trafaret
 django
 djangorestframework
+pytz
 marshmallow
 valideer
 attr
@@ -12,3 +14,4 @@ cattrs
 cerberus
 voluptuous
 schematics
+graphene

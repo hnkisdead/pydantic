@@ -33,7 +33,6 @@ except Exception:
     print('WARNING: unable to import TestMarshmallow')
     TestMarshmallow = None
 
-
 try:
     from test_valideer import TestValideer
 except Exception:
@@ -64,7 +63,14 @@ except Exception as e:
     print('WARNING: unable to import TestSchematics')
     TestSchematics = None
 
-PUNCTUATION = ' \t\n!"#$%&\'()*+,-./'
+try:
+    from test_graphene import TestGraphene
+except Exception as e:
+    print("WARNING: unable to import TestGraphene")
+    TestGraphene = None
+
+
+PUNCTUATION = " \t\n!\"#$%&'()*+,-./"
 LETTERS = string.ascii_letters
 UNICODE = '\xa0\xad¡¢£¤¥¦§¨©ª«¬ ®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ'
 ALL = PUNCTUATION * 5 + LETTERS * 20 + UNICODE
@@ -80,6 +86,7 @@ other_tests = [
     TestSchematics,
     TestDRF,
     TestCerberus,
+    TestGraphene,
 ]
 active_other_tests = [t for t in other_tests if t is not None]
 
